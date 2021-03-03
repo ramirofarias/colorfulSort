@@ -1,4 +1,3 @@
-import { SSL_OP_EPHEMERAL_RSA } from "constants";
 import React, { useEffect, useState } from "react";
 import { BubbleSort } from "./BubbleSort";
 
@@ -25,28 +24,8 @@ export const SortingVisualizer: React.FC = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  async function handleClickBubbleSort() {
-    function sleep(ms: number) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-    }
-
-    const len = bars.length;
-    for (let i = 0; i < len; i++) {
-      for (let j = 0; j < len - i - 1; j++) {
-        if (bars[j] > bars[j + 1]) {
-          swapBars(j);
-          await sleep(1);
-
-          setBars([...bars]);
-        }
-      }
-    }
-
-    function swapBars(j: number) {
-      let temp = bars[j];
-      bars[j] = bars[j + 1];
-      bars[j + 1] = temp;
-    }
+  function handleClickBubbleSort() {
+    BubbleSort(bars, setBars);
   }
 
   const isAlreadySorted = (array: number[]) => {
@@ -69,7 +48,14 @@ export const SortingVisualizer: React.FC = () => {
       >
         Run
       </button>
-      <div id="visualizer" style={{ display: "flex" }}>
+      <div
+        id="visualizer"
+        style={{
+          display: "flex",
+          boxShadow: "-1px 1px 18px 1px rgba(0,0,0,0.34)",
+          width: "max-content",
+        }}
+      >
         {bars.map((barra, idx) => {
           return (
             <div
