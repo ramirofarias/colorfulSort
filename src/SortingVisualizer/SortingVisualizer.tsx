@@ -25,7 +25,29 @@ export const SortingVisualizer: React.FC = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  async function handleClickBubbleSort() {}
+  async function handleClickBubbleSort() {
+    function sleep(ms: number) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    const len = bars.length;
+    for (let i = 0; i < len; i++) {
+      for (let j = 0; j < len - i - 1; j++) {
+        if (bars[j] > bars[j + 1]) {
+          swapBars(j);
+          await sleep(1);
+
+          setBars([...bars]);
+        }
+      }
+    }
+
+    function swapBars(j: number) {
+      let temp = bars[j];
+      bars[j] = bars[j + 1];
+      bars[j + 1] = temp;
+    }
+  }
 
   const isAlreadySorted = (array: number[]) => {
     let originalArray = [...array];
