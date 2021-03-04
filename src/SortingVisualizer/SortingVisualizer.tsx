@@ -24,18 +24,18 @@ export const SortingVisualizer: React.FC = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  function handleClickBubbleSort() {
-    BubbleSort(bars, setBars);
+  async function handleClickBubbleSort() {
+    await BubbleSort(bars, setBars);
   }
 
-  const isAlreadySorted = (array: number[]) => {
-    let originalArray = [...array];
-    let sortedArray = array.sort((a, b) => a - b);
-    for (let i = 0; i < array.length; i++) {
-      if (originalArray[i] !== sortedArray[i]) return false;
-    }
-    return true;
-  };
+  // const isAlreadySorted = (array: number[]) => {
+  //   let originalArray = [...array];
+  //   let sortedArray = array.sort((a, b) => a - b);
+  //   for (let i = 0; i < array.length; i++) {
+  //     if (originalArray[i] !== sortedArray[i]) return false;
+  //   }
+  //   return true;
+  // };
 
   return (
     <div>
