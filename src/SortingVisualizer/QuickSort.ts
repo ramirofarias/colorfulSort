@@ -1,10 +1,17 @@
 import swapBars from "./HelperFunctions";
 
-async function partition(array: number[], start: number, end: number) {
+async function partition(
+  array: number[],
+  start: number,
+  end: number,
+  setBars: (arg0: number[]) => void
+) {
   let pivotIndex = start;
   let pivotValue = array[end];
   for (let i = start; i < end; i++) {
     if (array[i] < pivotValue) {
+      setBars([...array]);
+
       await swapBars(array, i, pivotIndex);
       pivotIndex++;
     }
@@ -24,8 +31,9 @@ export async function QuickSort(
     return [];
   }
 
-  let index = await partition(array, start, end);
-  await QuickSort(array, start, index - 1, setBars);
-  await QuickSort(array, index + 1, end, setBars);
-  setBars([...array]);
+  let index = await partition(array, start, end, setBars);
+  await Promise.all([
+    QuickSort(array, start, index - 1, setBars),
+    QuickSort(array, index + 1, end, setBars),
+  ]);
 }

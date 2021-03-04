@@ -75,8 +75,8 @@ export const SortingVisualizer: React.FC = () => {
               key={idx}
               style={{
                 backgroundColor: `rgb(${barra},${colorin},${anotherColorin}`,
-                height: "300px",
-                width: "3px",
+                height: `400px`,
+                width: "4px",
               }}
             ></div>
           );
