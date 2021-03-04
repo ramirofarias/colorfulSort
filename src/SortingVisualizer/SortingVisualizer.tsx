@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BubbleSort } from "./BubbleSort";
+import { QuickSort } from "./QuickSort";
 
 export const SortingVisualizer: React.FC = () => {
   const [bars, setBars] = useState([0]);
@@ -28,25 +29,35 @@ export const SortingVisualizer: React.FC = () => {
     await BubbleSort(bars, setBars);
   }
 
-  // const isAlreadySorted = (array: number[]) => {
-  //   let originalArray = [...array];
-  //   let sortedArray = array.sort((a, b) => a - b);
-  //   for (let i = 0; i < array.length; i++) {
-  //     if (originalArray[i] !== sortedArray[i]) return false;
-  //   }
-  //   return true;
-  // };
+  function handleClickQuickSort() {
+    QuickSort(bars, 0, bars.length - 1, setBars);
+  }
+
+  const isAlreadySorted = (array: number[]) => {
+    let originalArray = [...array];
+    let sortedArray = array.sort((a, b) => a - b);
+    for (let i = 0; i < array.length; i++) {
+      if (originalArray[i] !== sortedArray[i]) return false;
+    }
+    return true;
+  };
 
   return (
     <div>
       <h1 id="titulo">Sorting Visualizer with colorines</h1>
-      <button>Bubble Sort</button>
       <button
         onClick={() => {
           handleClickBubbleSort();
         }}
       >
-        Run
+        Bubble Sort
+      </button>
+      <button
+        onClick={() => {
+          handleClickQuickSort();
+        }}
+      >
+        QuickSort
       </button>
       <div
         id="visualizer"

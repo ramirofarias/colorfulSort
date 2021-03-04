@@ -9,7 +9,7 @@ export async function BubbleSort(
   for (let i = 0; i < len; i++) {
     for (let j = 0; j < len - i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
-        await swapBars(arr, j, 0);
+        await swapBars(arr, j, j + 1);
         setBars([...arr]);
       }
     }
