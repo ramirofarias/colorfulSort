@@ -10,14 +10,16 @@ async function partition(
   let pivotValue = array[end];
   for (let i = start; i < end; i++) {
     if (array[i] < pivotValue) {
+      await swapBars(array, i, pivotIndex);
       setBars([...array]);
 
-      await swapBars(array, i, pivotIndex);
       pivotIndex++;
     }
   }
 
   await swapBars(array, pivotIndex, end);
+  setBars([...array]);
+
   return pivotIndex;
 }
 

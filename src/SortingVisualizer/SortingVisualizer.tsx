@@ -11,8 +11,11 @@ export const SortingVisualizer: React.FC = () => {
     const arr = [];
     let prettyColor = generateRandomNum(0, 255);
     let anotherPrettyColor = generateRandomNum(0, 255);
-    for (let i = 0; i < 255; i++) {
-      arr.push(generateRandomNum(0, 255));
+    while (arr.length <= 255) {
+      let randomNum = generateRandomNum(0, 255);
+      if (arr.indexOf(randomNum) === -1) {
+        arr.push(randomNum);
+      }
     }
     setBars(arr);
     setColorin(prettyColor);
@@ -63,7 +66,7 @@ export const SortingVisualizer: React.FC = () => {
         id="visualizer"
         style={{
           display: "flex",
-          boxShadow: "-1px 1px 18px 1px rgba(0,0,0,0.34)",
+          alignItems: "center",
           width: "max-content",
         }}
       >
