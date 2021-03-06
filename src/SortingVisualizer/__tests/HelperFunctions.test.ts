@@ -1,4 +1,4 @@
-import swapBars from "./HelperFunctions";
+import swapBars from "../HelperFunctions";
 
 describe("Helper Functions tests", () => {
   it("Should swap two array elements", async () => {

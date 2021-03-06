@@ -1,4 +1,4 @@
-import { BubbleSort } from "./BubbleSort";
+import { BubbleSort } from "../BubbleSort";
 jest.useFakeTimers();
 
 describe.skip("Bubble sort tests", () => {

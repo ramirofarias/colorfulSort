@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render } from "@testing-library/react";
-import { SortingVisualizer } from "./SortingVisualizer";
+import { SortingVisualizer } from "../SortingVisualizer";
 
 describe("SortingVisualizer rendering tests", () => {
   let mount: any;
@@ -15,10 +15,10 @@ describe("SortingVisualizer rendering tests", () => {
     expect(titulo).toBeTruthy();
   });
 
-  it("Should render 3 buttons", () => {
+  it("Should render 4 buttons", () => {
     const { getAllByRole } = mount;
     const botones = getAllByRole("button");
-    expect(botones).toHaveLength(3);
+    expect(botones).toHaveLength(4);
   });
 
   it("Should display an array of 255 elements on render", () => {

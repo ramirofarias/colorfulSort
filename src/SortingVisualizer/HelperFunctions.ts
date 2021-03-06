@@ -8,6 +8,7 @@ export default async function swapBars(
   arr[firstIndex] = arr[secondIndex];
   arr[secondIndex] = temp;
 }
-async function sleep(ms: number) {
+
+export async function sleep(ms: number) {
   await new Promise((r) => setTimeout(r, ms));
 }
