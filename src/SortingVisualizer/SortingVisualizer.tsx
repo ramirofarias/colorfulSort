@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BubbleSort } from "./algorithms/BubbleSort";
+import { InsertionSort } from "./algorithms/InsertionSort";
 import { MergeSort } from "./algorithms/MergeSort";
 import { QuickSort } from "./algorithms/QuickSort";
 import { SelectionSort } from "./algorithms/SelectionSort";
@@ -39,6 +40,13 @@ export const SortingVisualizer: React.FC = () => {
 
   async function handleClickSelectionSort() {
     let step = SelectionSort(bars);
+    setDisabledButton(true);
+    await drawEachStep(step, setBars);
+    setDisabledButton(false);
+  }
+
+  async function handleClickInsertionSort() {
+    let step = InsertionSort(bars);
     setDisabledButton(true);
     await drawEachStep(step, setBars);
     setDisabledButton(false);
@@ -150,6 +158,14 @@ export const SortingVisualizer: React.FC = () => {
           }}
         >
           Bubble Sort
+        </button>
+        <button
+          disabled={disabledButton}
+          onClick={() => {
+            handleClickInsertionSort();
+          }}
+        >
+          Insertion Sort
         </button>
         <button
           disabled={disabledButton}

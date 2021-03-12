@@ -1,4 +1,4 @@
-import { MergeSort } from "../MergeSort";
+import { MergeSort } from "../algorithms/MergeSort";
 
 describe("MergeSort tests", () => {
   const setBars = jest.fn();

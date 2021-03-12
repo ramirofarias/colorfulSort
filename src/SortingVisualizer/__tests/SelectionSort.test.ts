@@ -1,4 +1,4 @@
-import { SelectionSort } from "../SelectionSort";
+import { SelectionSort } from "../algorithms/SelectionSort";
 
 describe("Selection Sort tests", () => {
   let array = [1, 5, 7, 8, 2, 4, 3];
