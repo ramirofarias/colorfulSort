@@ -1,4 +1,4 @@
-import swapBars from "./HelperFunctions";
+import swapBars from "../HelperFunctions";
 
 async function partition(
   array: number[],

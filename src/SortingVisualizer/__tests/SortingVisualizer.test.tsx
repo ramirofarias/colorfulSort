@@ -22,14 +22,14 @@ describe("SortingVisualizer rendering tests", () => {
   });
 
   it("Should display an array of 255 elements on render", () => {
-    const { queryAllByTitle } = mount;
-    const array = queryAllByTitle("bar");
+    const { queryAllByTestId } = mount;
+    const array = queryAllByTestId("bar");
     expect(array).toHaveLength(255);
   });
 
   it("Should generate new array when pressing button", () => {
-    const { queryByTitle } = mount;
-    const botonResetArray = queryByTitle("resetArray");
+    const { queryByTestId } = mount;
+    const botonResetArray = queryByTestId("resetArray");
     expect(botonResetArray).toBeTruthy();
     fireEvent.click;
   });

@@ -1,4 +1,4 @@
-import { sleep } from "./HelperFunctions";
+import { sleep } from "../HelperFunctions";
 
 async function merge(
   array: number[],
