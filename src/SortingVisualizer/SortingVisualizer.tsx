@@ -73,19 +73,11 @@ export const SortingVisualizer: React.FC = () => {
     }
   }
 
-  const isAlreadySorted = (array: number[]) => {
-    let originalArray = [...array];
-    let sortedArray = array.sort((a, b) => a - b);
-    for (let i = 0; i < array.length; i++) {
-      if (originalArray[i] !== sortedArray[i]) return false;
-    }
-    return true;
-  };
-
   return (
     <div
       className="wrapper"
       style={{
+        height: "max-content",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -96,6 +88,7 @@ export const SortingVisualizer: React.FC = () => {
 
       <button
         data-testid="resetArray"
+        disabled={disabledButton}
         onClick={generateBars}
         style={{
           background: `linear-gradient(90deg,
@@ -116,6 +109,7 @@ export const SortingVisualizer: React.FC = () => {
       >
         Generate pretty colors
       </button>
+
       <div
         id="visualizer"
         style={{
@@ -135,13 +129,14 @@ export const SortingVisualizer: React.FC = () => {
               key={idx}
               style={{
                 backgroundColor: `rgb(${colorin},${barra},${anotherColorin})`,
-                height: `${barra * 2}px`,
+                height: `${barra / 3.5}vh`,
                 width: `100%`,
               }}
             ></div>
           );
         })}
       </div>
+
       <div className="button--wrapper">
         <button
           disabled={disabledButton}
@@ -181,7 +176,7 @@ export const SortingVisualizer: React.FC = () => {
             handleClickMergeSort();
           }}
         >
-          MergeSort
+          Merge Sort
         </button>
       </div>
     </div>
