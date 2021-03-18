@@ -12,3 +12,7 @@ export default async function swapBars(
 export async function sleep(ms: number) {
   await new Promise((r) => setTimeout(r, ms));
 }
+
+export const generateRandomNum = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};

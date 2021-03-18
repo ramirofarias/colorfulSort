@@ -11,11 +11,11 @@ describe("SortingVisualizer rendering tests", () => {
 
   it("Should display the title", () => {
     const { queryByText } = mount;
-    const titulo = queryByText("Sorting Visualizer with colorines");
+    const titulo = queryByText("ColorfulSort");
     expect(titulo).toBeTruthy();
   });
 
-  it("Should render 4 buttons", () => {
+  it("Should render 6 buttons", () => {
     const { getAllByRole } = mount;
     const botones = getAllByRole("button");
     expect(botones).toHaveLength(4);

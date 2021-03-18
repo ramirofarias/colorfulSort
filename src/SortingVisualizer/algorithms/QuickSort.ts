@@ -12,7 +12,6 @@ async function partition(
     if (array[i] < pivotValue) {
       await swapBars(array, i, pivotIndex);
       setBars([...array]);
-
       pivotIndex++;
     }
   }

@@ -4,6 +4,9 @@ import { InsertionSort } from "./algorithms/InsertionSort";
 import { MergeSort } from "./algorithms/MergeSort";
 import { QuickSort } from "./algorithms/QuickSort";
 import { SelectionSort } from "./algorithms/SelectionSort";
+import ResetArray from "./components/ResetArray";
+import Visualizer from "./components/Visualizer";
+import { generateRandomNum } from "./HelperFunctions";
 
 export const SortingVisualizer: React.FC = () => {
   const [bars, setBars] = useState([0]);
@@ -26,10 +29,6 @@ export const SortingVisualizer: React.FC = () => {
     setAnotherColorin(anotherPrettyColor);
   };
   useEffect(generateBars, []);
-
-  const generateRandomNum = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
 
   async function handleClickBubbleSort() {
     let step = BubbleSort(bars);
@@ -86,57 +85,15 @@ export const SortingVisualizer: React.FC = () => {
     >
       <h1 id="titulo">Sorting Visualizer with colorines</h1>
 
-      <button
+      <ResetArray
         data-testid="resetArray"
-        disabled={disabledButton}
-        onClick={generateBars}
-        style={{
-          background: `linear-gradient(90deg,
-            rgba( ${colorin},${bars[0]}, ${anotherColorin},.7),
-            rgba(${colorin},${bars[126]}, ${anotherColorin},.7) 50%,
-            rgba(${colorin},${bars[254]}, ${anotherColorin},.7) 100%
-    )`,
-          borderRadius: "3px",
-          border: "none",
-          color: "white",
-          fontWeight: "bolder",
-          textTransform: "uppercase",
-          height: "48px",
-          padding: "0 30px",
-          boxShadow: `0 0 5px 2px rgba(0,0,0,.4)`,
-          textShadow: "0px 0px 5px rgba(0,0,0, .4)",
-        }}
-      >
-        Generate pretty colors
-      </button>
-
-      <div
-        id="visualizer"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          width: "90vw",
-          height: "100%",
-          overflow: "hidden",
-          boxShadow: "0px 0px 25px 2px rgba(0,0,0,.25)",
-        }}
-      >
-        {bars.map((barra, idx) => {
-          return (
-            <div
-              data-testid="bar"
-              className="bar"
-              key={idx}
-              style={{
-                backgroundColor: `rgb(${colorin},${barra},${anotherColorin})`,
-                height: `${barra / 3.5}vh`,
-                width: `100%`,
-              }}
-            ></div>
-          );
-        })}
-      </div>
-
+        disabledButton={disabledButton}
+        generateBars={generateBars}
+        color1={colorin}
+        color2={bars}
+        color3={anotherColorin}
+      />
+      <Visualizer bars={bars} color1={colorin} color3={anotherColorin} />
       <div className="button--wrapper">
         <button
           disabled={disabledButton}
