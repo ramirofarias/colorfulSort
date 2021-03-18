@@ -52,12 +52,19 @@ export const SortingVisualizer: React.FC = () => {
   }
 
   async function handleClickQuickSort() {
+    if (isAlreadySorted(bars)) {
+      return;
+    }
     setDisabledButton(true);
     await QuickSort(bars, 0, bars.length - 1, setBars);
     setDisabledButton(false);
   }
 
   async function handleClickMergeSort() {
+    if (isAlreadySorted(bars)) {
+      return;
+    }
+
     setDisabledButton(true);
     await MergeSort(bars, 0, 255, setBars);
     setDisabledButton(false);
@@ -70,6 +77,15 @@ export const SortingVisualizer: React.FC = () => {
     while ((await step.next()).done === false) {
       setBars([...(await step.next()).value]);
     }
+  }
+
+  function isAlreadySorted(bars: number[]) {
+    for (let i = 0; i < bars.length - 1; i++) {
+      if (bars[i] > bars[i + 1]) {
+        return false;
+      }
+    }
+    return true;
   }
 
   return (
