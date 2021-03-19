@@ -11,7 +11,7 @@ describe("SortingVisualizer rendering tests", () => {
 
   it("Should display the title", () => {
     const { queryByText } = mount;
-    const titulo = queryByText("ColorfulSort");
+    const titulo = queryByText("Colorful Sort");
     expect(titulo).toBeTruthy();
   });
 

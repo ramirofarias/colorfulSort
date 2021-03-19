@@ -12,7 +12,7 @@ export const SortingVisualizer: React.FC = () => {
   const [bars, setBars] = useState([0]);
   const [colorin, setColorin] = useState(0);
   const [anotherColorin, setAnotherColorin] = useState(0);
-  const [disabledButton, setDisabledButton] = useState(false);
+  const [isDisabled, setDisabledButton] = useState(false);
 
   const generateBars = () => {
     const arr = [];
@@ -99,11 +99,11 @@ export const SortingVisualizer: React.FC = () => {
         alignItems: "center",
       }}
     >
-      <h1 id="titulo">Sorting Visualizer with colorines</h1>
+      <h1 id="titulo">Colorful Sort</h1>
 
       <ResetArray
         data-testid="resetArray"
-        disabledButton={disabledButton}
+        disabledButton={isDisabled}
         generateBars={generateBars}
         color1={colorin}
         color2={bars}
@@ -112,7 +112,7 @@ export const SortingVisualizer: React.FC = () => {
       <Visualizer bars={bars} color1={colorin} color3={anotherColorin} />
       <div className="button--wrapper">
         <button
-          disabled={disabledButton}
+          disabled={isDisabled}
           onClick={() => {
             handleClickSelectionSort();
           }}
@@ -120,7 +120,7 @@ export const SortingVisualizer: React.FC = () => {
           Selection Sort
         </button>
         <button
-          disabled={disabledButton}
+          disabled={isDisabled}
           onClick={() => {
             handleClickBubbleSort();
           }}
@@ -128,7 +128,7 @@ export const SortingVisualizer: React.FC = () => {
           Bubble Sort
         </button>
         <button
-          disabled={disabledButton}
+          disabled={isDisabled}
           onClick={() => {
             handleClickInsertionSort();
           }}
@@ -136,7 +136,7 @@ export const SortingVisualizer: React.FC = () => {
           Insertion Sort
         </button>
         <button
-          disabled={disabledButton}
+          disabled={isDisabled}
           onClick={() => {
             handleClickQuickSort();
           }}
@@ -144,13 +144,18 @@ export const SortingVisualizer: React.FC = () => {
           QuickSort
         </button>
         <button
-          disabled={disabledButton}
+          disabled={isDisabled}
           onClick={() => {
             handleClickMergeSort();
           }}
         >
           Merge Sort
         </button>
+      </div>
+      <div className="about">
+        <a href="https://www.github.com/ramirofarias" target="_blank">
+          <span>Ramiro Farias — GitHub</span>
+        </a>
       </div>
     </div>
   );

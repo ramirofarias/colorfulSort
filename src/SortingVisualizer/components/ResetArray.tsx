@@ -25,6 +25,7 @@ const ResetArray = (props: {
         textTransform: "uppercase",
         height: "48px",
         padding: "0 30px",
+        marginBottom: "1em",
         boxShadow: `0 0 5px 2px rgba(0,0,0,.4)`,
         textShadow: "0px 0px 5px rgba(0,0,0, .4)",
       }}

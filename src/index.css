@@ -29,6 +29,12 @@ button {
   text-transform: uppercase;
 }
 
+.button--wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 button:focus {
   outline: none;
 }
@@ -45,6 +51,20 @@ button:hover {
 button:disabled {
   cursor: not-allowed;
   filter: brightness(40%);
+}
+
+.about {
+  position: fixed;
+  bottom: 0;
+}
+
+a {
+  color: #808080;
+  text-decoration: none; /* no underline */
+}
+a:hover {
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 900px) {
