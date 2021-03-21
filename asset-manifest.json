@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/colorfulSort/static/css/main.465830bb.chunk.css",
+    "main.css": "/colorfulSort/static/css/main.85da6552.chunk.css",
     "main.js": "/colorfulSort/static/js/main.ca572fe4.chunk.js",
     "main.js.map": "/colorfulSort/static/js/main.ca572fe4.chunk.js.map",
     "runtime-main.js": "/colorfulSort/static/js/runtime-main.12e80ce2.js",
@@ -10,13 +10,13 @@
     "static/js/3.b6c8367c.chunk.js": "/colorfulSort/static/js/3.b6c8367c.chunk.js",
     "static/js/3.b6c8367c.chunk.js.map": "/colorfulSort/static/js/3.b6c8367c.chunk.js.map",
     "index.html": "/colorfulSort/index.html",
-    "static/css/main.465830bb.chunk.css.map": "/colorfulSort/static/css/main.465830bb.chunk.css.map",
+    "static/css/main.85da6552.chunk.css.map": "/colorfulSort/static/css/main.85da6552.chunk.css.map",
     "static/js/2.04b350c7.chunk.js.LICENSE.txt": "/colorfulSort/static/js/2.04b350c7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.12e80ce2.js",
     "static/js/2.04b350c7.chunk.js",
-    "static/css/main.465830bb.chunk.css",
+    "static/css/main.85da6552.chunk.css",
     "static/js/main.ca572fe4.chunk.js"
   ]
 }
