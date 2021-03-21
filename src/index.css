@@ -54,7 +54,7 @@ button:disabled {
 }
 
 .about {
-  position: fixed;
+  position: relative;
   bottom: 0;
 }
 
