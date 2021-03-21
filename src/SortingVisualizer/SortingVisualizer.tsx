@@ -114,30 +114,6 @@ export const SortingVisualizer: React.FC = () => {
         <button
           disabled={isDisabled}
           onClick={() => {
-            handleClickSelectionSort();
-          }}
-        >
-          Selection Sort
-        </button>
-        <button
-          disabled={isDisabled}
-          onClick={() => {
-            handleClickBubbleSort();
-          }}
-        >
-          Bubble Sort
-        </button>
-        <button
-          disabled={isDisabled}
-          onClick={() => {
-            handleClickInsertionSort();
-          }}
-        >
-          Insertion Sort
-        </button>
-        <button
-          disabled={isDisabled}
-          onClick={() => {
             handleClickQuickSort();
           }}
         >
@@ -151,9 +127,37 @@ export const SortingVisualizer: React.FC = () => {
         >
           Merge Sort
         </button>
+        <button
+          disabled={isDisabled}
+          onClick={() => {
+            handleClickInsertionSort();
+          }}
+        >
+          Insertion Sort
+        </button>
+        <button
+          disabled={isDisabled}
+          onClick={() => {
+            handleClickSelectionSort();
+          }}
+        >
+          Selection Sort
+        </button>
+        <button
+          disabled={isDisabled}
+          onClick={() => {
+            handleClickBubbleSort();
+          }}
+        >
+          Bubble Sort
+        </button>
       </div>
       <div className="about">
-        <a href="https://www.github.com/ramirofarias" target="_blank">
+        <a
+          href="https://www.github.com/ramirofarias"
+          target="_blank"
+          rel="noreferrer"
+        >
           <span>Ramiro Farias — GitHub</span>
         </a>
       </div>

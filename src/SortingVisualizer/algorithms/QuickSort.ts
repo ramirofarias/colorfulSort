@@ -33,8 +33,6 @@ export async function QuickSort(
   }
 
   let index = await partition(array, start, end, setBars);
-  await Promise.all([
-    QuickSort(array, start, index - 1, setBars),
-    QuickSort(array, index + 1, end, setBars),
-  ]);
+  await QuickSort(array, start, index - 1, setBars);
+  await QuickSort(array, index + 1, end, setBars);
 }
